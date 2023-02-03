@@ -31,7 +31,7 @@ return {
 
     local custom_fname = require("lualine.components.filename"):extend()
     local highlight = require("lualine.highlight")
-    local default_status_colors = { saved = "#266d6a", modified = "#ff9e64" }
+    local default_status_colors = { saved = "#2ac3de", modified = "#ff9e64" }
 
     function custom_fname:init(options)
       custom_fname.super.init(self, options)
@@ -77,6 +77,8 @@ return {
         theme = "auto",
         globalstatus = false,
         disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
       },
       sections = {
         lualine_a = {
