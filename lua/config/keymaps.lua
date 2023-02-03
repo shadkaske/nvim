@@ -8,7 +8,7 @@ require("which-key").register({
 })
 
 -- Tmux Navigator
-vim.keymap.set({ "n", "t" }, "<C-h>", "<cmd>NavigatorLeft<cr>", { desc = "Go to Left Window" })
-vim.keymap.set({ "n", "t" }, "<C-j>", "<cmd>NavigatorDown<cr>", { desc = "Go to Lower Window" })
-vim.keymap.set({ "n", "t" }, "<C-k>", "<cmd>NavigatorUp<cr>", { desc = "Go to Upper Window" })
-vim.keymap.set({ "n", "t" }, "<C-l>", "<cmd>NavigatorRight<cr>", { desc = "Go to Right Window" })
+vim.keymap.set({ "n", "t", "v" }, "<C-h>", "<cmd>NavigatorLeft<cr>", { desc = "Go to Left Window" })
+vim.keymap.set({ "n", "t", "v" }, "<C-j>", "<cmd>NavigatorDown<cr>", { desc = "Go to Lower Window" })
+vim.keymap.set({ "n", "t", "v" }, "<C-k>", "<cmd>NavigatorUp<cr>", { desc = "Go to Upper Window" })
+vim.keymap.set({ "n", "t", "v" }, "<C-l>", "<cmd>NavigatorRight<cr>", { desc = "Go to Right Window" })
