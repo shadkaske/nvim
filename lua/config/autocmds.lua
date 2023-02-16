@@ -3,3 +3,6 @@
 -- Add any additional autocmds here
 vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = [[set formatoptions-=ro]] })
 vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = [[setlocal formatoptions-=ro]] })
+
+-- Automagically Trim Whitespace
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]] })
