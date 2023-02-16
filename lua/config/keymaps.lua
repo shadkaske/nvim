@@ -1,6 +1,19 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
+-- Smartly opens either git_files or find_files, depending on whether the working directory is
+-- contained in a Git repo.
+local _, builtin = pcall(require, "telescope.builtin")
+local function find_project_files(opts)
+  opts = opts or {}
+  local ok = pcall(builtin.git_files, opts)
+
+  if not ok then
+    builtin.find_files(opts)
+  end
+end
+
 local default_options = { silent = true, noremap = true }
 
 vim.keymap.set({ "n", "v" }, "<leader>l", "")
@@ -10,6 +23,11 @@ require("which-key").register({
   ["gy"] = { name = "Clipboard" },
   ["l"] = { name = "Lsp" },
 })
+
+-- Control p for file finder
+vim.keymap.set({ "n", "v" }, "<C-p>", function()
+  find_project_files({ previewer = false })
+end, { desc = "Find Files" })
 
 -- LSP Keymaps
 vim.keymap.set({ "n", "v" }, "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
