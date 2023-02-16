@@ -21,13 +21,19 @@ require("which-key").register({
   mode = { "n", "v" },
   ["<leader>d"] = { name = "Debug" },
   ["gy"] = { name = "Clipboard" },
-  ["l"] = { name = "Lsp" },
+  ["<leader>l"] = { name = "Lsp" },
+  ["<leader>y"] = { name = "Clipboard" },
 })
 
 -- Control p for file finder
 vim.keymap.set({ "n", "v" }, "<C-p>", function()
   find_project_files({ previewer = false })
 end, { desc = "Find Files" })
+
+-- Search snippets
+vim.keymap.set({ "n", "v" }, "<leader>lN", function()
+  require("telescope").extensions.luasnip.luasnip({})
+end, { desc = "Snippets" })
 
 -- LSP Keymaps
 vim.keymap.set({ "n", "v" }, "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
@@ -41,8 +47,8 @@ vim.keymap.set({ "n", "v" }, "<leader>lw", "<cmd>Telescope diagnostics<cr>", { d
 vim.keymap.set({ "n", "v" }, "<leader>lf", "<cmd>lua require('lvim.lsp.utils').format()<cr>", { desc = "Format" })
 vim.keymap.set({ "n", "v" }, "<leader>li", "<cmd>LspInfo<cr>", { desc = "Info" })
 vim.keymap.set({ "n", "v" }, "<leader>lI", "<cmd>Mason<cr>", { desc = "Mason Info" })
-vim.keymap.set({ "n", "v" }, "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
-vim.keymap.set({ "n", "v" }, "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
+vim.keymap.set({ "n", "v" }, "<leader>ln", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
+vim.keymap.set({ "n", "v" }, "<leader>lp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
 vim.keymap.set({ "n", "v" }, "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", { desc = "CodeLens Action" })
 vim.keymap.set({ "n", "v" }, "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", { desc = "Quickfix" })
 vim.keymap.set({ "n", "v" }, "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
@@ -88,11 +94,16 @@ vim.keymap.set(
 )
 vim.keymap.set({ "n", "v" }, "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", { desc = "Git Diff" })
 
--- Copy Paste Keymaps
+-- Clipboard Keymaps
 vim.keymap.set({ "n", "v" }, "gyo", '"_dP', { desc = "Paste Over" })
 vim.keymap.set({ "n", "v" }, "gyp", '"+p', { desc = "Paste System" })
 vim.keymap.set({ "n", "v" }, "gyy", '"+y', { desc = "Yank to System" })
 vim.keymap.set({ "n", "v" }, "gyd", '"+d', { desc = "Delete to System" })
+vim.keymap.set({ "n", "v" }, "<leader>yo", '"_dP', { desc = "Paste Over" })
+vim.keymap.set({ "n", "v" }, "<leader>yp", '"+p', { desc = "Paste System" })
+vim.keymap.set({ "n", "v" }, "<leader>yy", '"+y', { desc = "Yank to System" })
+vim.keymap.set({ "n", "v" }, "<leader>yd", '"+d', { desc = "Delete to System" })
+vim.keymap.set({ "n", "v" }, "<leader>ys", "<cmd>Telescope neoclip<cr>", { desc = "Search Clipboard History" })
 
 -- Tmux Navigator
 vim.keymap.set({ "n", "t", "v" }, "<C-h>", "<cmd>NavigatorLeft<cr>", { desc = "Go to Left Window" })
@@ -118,3 +129,4 @@ vim.keymap.set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Sav
 -- Insert mode shortcuts
 vim.keymap.set("i", "<C-e>", "<C-o>$", default_options)
 vim.keymap.set("i", ";;", "<C-o>A;", default_options)
+vim.keymap.set("n", ";;", "A;<ESC>", default_options)
