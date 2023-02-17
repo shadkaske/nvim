@@ -2,6 +2,8 @@ vim.cmd("setlocal tabstop=4 shiftwidth=4 expandtab")
 
 local dap = require("dap")
 
+require("dapui").setup()
+
 dap.adapters.php = {
   type = "executable",
   command = "node",
@@ -17,4 +19,3 @@ dap.configurations.php = {
     log = true,
   },
 }
-
