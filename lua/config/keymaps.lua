@@ -25,6 +25,16 @@ require("which-key").register({
   ["<leader>y"] = { name = "Clipboard" },
 })
 
+-- Center When Moving
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
+-- New Lines without staying in insert mode
+vim.keymap.set("n", "[o", "O<ESC>")
+vim.keymap.set("n", "]o", "o<ESC>")
+
 -- Control p for file finder
 vim.keymap.set({ "n", "v" }, "<C-p>", function()
   find_project_files({ previewer = false })
@@ -112,8 +122,14 @@ vim.keymap.set({ "n", "t", "v" }, "<C-k>", "<cmd>NavigatorUp<cr>", { desc = "Go 
 vim.keymap.set({ "n", "t", "v" }, "<C-l>", "<cmd>NavigatorRight<cr>", { desc = "Go to Right Window" })
 
 -- buffers
-vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next" })
-vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Previous" })
+vim.keymap.set({ "n", "v" }, "<leader>bn", "<cmd>bnext<cr>", { desc = "Next" })
+vim.keymap.set({ "n", "v" }, "<leader>bp", "<cmd>bprevious<cr>", { desc = "Previous" })
+vim.keymap.set(
+  { "n", "v" },
+  "<leader>bj",
+  "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=ture previewer=false<cr>",
+  { desc = "Jump" }
+)
 
 vim.keymap.set("n", "<leader>.", "<cmd>nohlsearch<cr>", { desc = "No Highlight Search" })
 vim.keymap.set(
@@ -122,9 +138,6 @@ vim.keymap.set(
   [[ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n" <BAR> redraw<CR>]],
   { desc = "Toggle Highlight Search", silent = true, expr = true }
 )
-
--- Control S To Save
-vim.keymap.set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- Insert mode shortcuts
 vim.keymap.set("i", "<C-e>", "<C-o>$", default_options)
