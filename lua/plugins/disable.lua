@@ -1,4 +1,4 @@
 return {
-  { "akinsho/bufferline.nvim", enabled = false },
-  { "RRethy/vim-illuminate", enabled = false },
+  -- { "akinsho/bufferline.nvim", enabled = false },
+  -- { "RRethy/vim-illuminate", enabled = false },
 }
