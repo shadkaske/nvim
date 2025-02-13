@@ -18,26 +18,6 @@ return {
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "php",
-        "html",
-      },
-    },
-    init = function(_, opts)
-      local blade_parser = require("nvim-treesitter.parsers").get_parser_configs()
-      blade_parser.blade = {
-        install_info = {
-          url = "https://github.com/EmranMR/tree-sitter-blade",
-          files = { "src/parser.c" },
-          branch = "main",
-        },
-        filetype = "blade",
-      }
-    end,
-  },
-  {
     "mfussenegger/nvim-dap",
     optional = true,
     opts = function()
