@@ -54,7 +54,7 @@ return {
         "html",
       },
     },
-    init = function(_, opts)
+    init = function()
       local blade_parser = require("nvim-treesitter.parsers").get_parser_configs()
       blade_parser.blade = {
         install_info = {
@@ -65,5 +65,22 @@ return {
         filetype = "blade",
       }
     end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "blade-formatter",
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        blade = { "blade-formatter" },
+      },
+    },
   },
 }
