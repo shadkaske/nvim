@@ -48,12 +48,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "php",
-        "html",
-      },
-    },
     init = function()
       local blade_parser = require("nvim-treesitter.parsers").get_parser_configs()
       blade_parser.blade = {
@@ -80,6 +74,7 @@ return {
     opts = {
       formatters_by_ft = {
         blade = { "blade-formatter" },
+        php = { "pint" },
       },
     },
   },
