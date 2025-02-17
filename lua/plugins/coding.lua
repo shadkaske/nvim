@@ -5,4 +5,12 @@ return {
       modes = { insert = true, command = false, terminal = false },
     },
   },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "default",
+      },
+    },
+  },
 }
