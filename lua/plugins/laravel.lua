@@ -75,16 +75,65 @@ return {
     opts = {
       ensure_installed = {
         "blade-formatter",
+        "emmet-ls",
+        "eslint_d",
+        "html-lsp",
+        "intelephense",
+        "nginx-language-server",
+        "php-debug-adapter",
+        "phpstan",
+        "pint",
+        "prettierd",
+        "rustywind",
+        "tailwindcss-language-server",
       },
     },
+  },
+  {
+    "jwalton512/vim-blade",
   },
   {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
       formatters_by_ft = {
-        blade = { "blade-formatter" },
+        blade = { "blade-formatter", "rustywind" },
         php = { "pint" },
+      },
+    },
+    formatters = {
+      injected = { options = { ignore_errors = true } },
+      pint = {
+        meta = {
+          url = "https://github.com/laravel/pint",
+          description = "Laravel Pint is an opinionated PHP code style fixer for minimalists. Pint is built on top of PHP-CS-Fixer and makes it simple to ensure that your code style stays clean and consistent.",
+        },
+        command = require("conform.util").find_executable({
+          vim.fn.stdpath("data") .. "/mason/bin/pint",
+          "vendor/bin/pint",
+        }, "pint"),
+        args = { "$FILENAME" },
+        stdin = false,
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      -- @type lspconfig.options
+      servers = {
+        intelephense = {
+          filetypes = { "php", "blade", "php_only" },
+          settings = {
+            intelephense = {
+              filetypes = { "php", "blade", "php_only" },
+              files = {
+                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+                maxSize = 5000000,
+              },
+            },
+          },
+        },
       },
     },
   },
