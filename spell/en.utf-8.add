@@ -1,6 +1,7 @@
 Ansible
 Direnv
 direnv
+MariaDB
 envrc
 yml
 sudo

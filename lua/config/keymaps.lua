@@ -56,3 +56,6 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<leader>ba", function()
   Snacks.bufdelete.all()
 end, { desc = "Close all Buffers" })
+-- Ansible Keymaps @ leader t
+vim.keymap.set("n", "<leader>te", "<cmd>!ansible-vault encrypt %<cr>", { desc = "Ansible Vault Encrypt File" })
+vim.keymap.set("n", "<leader>td", "<cmd>!ansible-vault decrypt %<cr>", { desc = "Ansible Vault Encrypt File" })
