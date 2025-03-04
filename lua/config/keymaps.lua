@@ -59,3 +59,25 @@ end, { desc = "Close all Buffers" })
 -- Ansible Keymaps @ leader t
 vim.keymap.set("n", "<leader>te", "<cmd>!ansible-vault encrypt %<cr>", { desc = "Ansible Vault Encrypt File" })
 vim.keymap.set("n", "<leader>td", "<cmd>!ansible-vault decrypt %<cr>", { desc = "Ansible Vault Encrypt File" })
+
+vim.keymap.set("n", "<leader><Space>", function()
+  local options = {
+    finder = "files",
+    format = "file",
+    show_empty = true,
+    hidden = true,
+    ignored = true,
+    follow = false,
+    supports_live = true,
+  }
+  Snacks.picker.files(options)
+end, { desc = "All Files Picker" })
+
+vim.keymap.set("n", "<leader>e", function()
+  Snacks.explorer({
+    hidden = true,
+    ignored = true,
+    supports_live = true,
+    auto_close = true,
+  })
+end, { desc = "File Explorer" })
