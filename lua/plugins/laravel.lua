@@ -11,9 +11,9 @@ return {
     event = { "BufRead *.php" },
     cmd = { "Laravel" },
     keys = {
-      { "<leader>la", ":Laravel artisan<cr>" },
-      { "<leader>lr", ":Laravel routes<cr>" },
-      { "<leader>lm", ":Laravel related<cr>" },
+      { "<leader>la", ":Laravel artisan<cr>", desc = "Artisan" },
+      { "<leader>lr", ":Laravel routes<cr>", desc = "Routes" },
+      { "<leader>lm", ":Laravel related<cr>", desc = "Related" },
     },
     opts = {
       pickers = {
