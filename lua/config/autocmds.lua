@@ -13,3 +13,5 @@ vim.api.nvim_create_autocmd(
   { pattern = { "*.btxml" }, command = [[set filetype=xml]] }
 )
 
+-- Automagically Trim Whitespace
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]] })
