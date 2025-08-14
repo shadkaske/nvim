@@ -9,3 +9,5 @@ vim.filetype.add({
 
 -- Set to "intelephense" to use intelephense instead of phpactor.
 vim.g.lazyvim_php_lsp = "intelephense"
+
+vim.o.laststatus = 0
