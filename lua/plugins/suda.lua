@@ -1,7 +1,7 @@
 return {
   {
     "lambdalisue/vim-suda",
-    lazy = true,
+    event = "VeryLazy",
     cmd = { "SudaRead", "SudaWrite" },
   },
 }
