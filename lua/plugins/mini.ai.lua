@@ -1,6 +1,6 @@
 return {
-	"echasnovski/mini.ai",
-	version = "*",
-	event = "VeryLazy",
-	opt = {},
+  'echasnovski/mini.ai',
+  version = '*',
+  event = 'VeryLazy',
+  opt = {},
 }
