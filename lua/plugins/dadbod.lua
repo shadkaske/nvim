@@ -28,10 +28,6 @@ return {
     vim.g.db_ui_use_nerd_fonts = true
     vim.g.db_ui_use_nvim_notify = true
     vim.g.db_ui_execute_on_save = false
-    vim.g.dbs = {
-      { name = 'printapp-dev', url = 'mysql://laravel@localhost:3380/printapp' },
-      -- { name = "staging", url = "Replace with your database connection URL." },
-    }
   end,
   keys = {
     { '<leader>D', '<cmd>DBUIToggle<CR>', desc = 'Toggle DBUI' },
