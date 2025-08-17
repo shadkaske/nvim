@@ -13,7 +13,7 @@ return {
   },
   lazy = false,
   keys = {
-    -- { '-', '<cmd>Oil<CR>', mode = 'n', desc = 'Open Oil' },
-    { '-', '<cmd>lua require("oil").toggle_float()<CR>', mode = 'n', desc = 'Toggle Oil Float' },
+    { '-', '<cmd>Oil<CR>', mode = 'n', desc = 'Open Oil' },
+    -- { '-', '<cmd>lua require("oil").toggle_float()<CR>', mode = 'n', desc = 'Toggle Oil Float' },
   },
 }

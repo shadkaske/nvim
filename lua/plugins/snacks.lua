@@ -21,10 +21,10 @@ return {
     words = { enabled = true },
     styles = {
       notification = {
-        wo = { wrap = true }, -- Wrap notifications
+        wo = { wrap = true },
       },
     },
-    terminal = { enabled = true },
+    terminal = { enabled = false },
     toggle = { enabled = true },
     zen = { enabled = false },
   },
