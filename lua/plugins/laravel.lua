@@ -80,6 +80,7 @@ return {
         "eslint_d",
         "html-lsp",
         "intelephense",
+        "laravel-ls",
         "nginx-language-server",
         "php-debug-adapter",
         "phpstan",
