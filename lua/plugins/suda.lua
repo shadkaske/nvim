@@ -1,7 +1,5 @@
 return {
-  {
-    "lambdalisue/vim-suda",
-    event = "VeryLazy",
-    cmd = { "SudaRead", "SudaWrite" },
-  },
+  'lambdalisue/vim-suda',
+  event = 'VeryLazy',
+  cmd = { 'SudaRead', 'SudaWrite' },
 }

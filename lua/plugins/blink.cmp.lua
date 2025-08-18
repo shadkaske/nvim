@@ -1,32 +1,32 @@
 return {
-	"saghen/blink.cmp",
-	dependencies = { "rafamadriz/friendly-snippets" },
-	version = "1.*",
-	build = "cargo build --release",
-	---@module 'blink.cmp'
-	---@type blink.cmp.Config
-	opts = {
-		keymap = { preset = "default" },
+  'saghen/blink.cmp',
+  dependencies = { 'rafamadriz/friendly-snippets' },
+  version = '1.*',
+  build = 'cargo build --release',
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    keymap = { preset = 'default' },
 
-		appearance = {
-			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-			-- Adjusts spacing to ensure icons are aligned
-			nerd_font_variant = "mono",
-		},
+    appearance = {
+      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+      -- Adjusts spacing to ensure icons are aligned
+      nerd_font_variant = 'mono',
+    },
 
-		completion = { documentation = { auto_show = false } },
+    completion = { documentation = { auto_show = false } },
 
-		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
-			per_filetype = {
-				sql = { "snippets", "dadbod", "buffer" },
-			},
-			providers = {
-				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-			},
-		},
+    sources = {
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      per_filetype = {
+        sql = { 'snippets', 'dadbod', 'buffer' },
+      },
+      providers = {
+        dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
+      },
+    },
 
-		fuzzy = { implementation = "prefer_rust_with_warning" },
-	},
-	opts_extend = { "sources.default" },
+    fuzzy = { implementation = 'prefer_rust_with_warning' },
+  },
+  opts_extend = { 'sources.default' },
 }

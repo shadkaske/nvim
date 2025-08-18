@@ -17,7 +17,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Enable mouse mode
-vim.o.mouse = "a"
+vim.o.mouse = 'a'
 vim.o.mousemoveevent = true
 
 -- No Wrap
@@ -31,7 +31,7 @@ vim.o.shiftwidth = 4
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = 'unnamedplus'
 
 -- Split options
 vim.o.splitbelow = true
@@ -48,7 +48,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 500
@@ -56,9 +56,9 @@ vim.o.timeout = true
 vim.o.timeoutlen = 500
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = 'menuone,noselect'
 
 -- Set win borders
-vim.o.winborder = "rounded"
+vim.o.winborder = 'rounded'
 
 vim.o.termguicolors = true

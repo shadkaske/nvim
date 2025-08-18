@@ -2,19 +2,19 @@
 vim.g.enable_auto_pairs = true
 
 -- Global Options
-require("config.global")
+require('config.global')
 
 -- Vim Options
-require("config.options")
+require('config.options')
 
 -- Lazy.nvim
-require("config.lazy")
+require('config.lazy')
 
 -- Autocommands
-require("config.autocommands")
+require('config.autocommands')
 
 -- Vim Keymaps
-require("config.keymaps")
+require('config.keymaps')
 
 -- Require other config files
-require("config.colorscheme")
+require('config.colorscheme')

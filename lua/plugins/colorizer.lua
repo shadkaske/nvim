@@ -1,15 +1,15 @@
 return {
   {
-    "norcalli/nvim-colorizer.lua",
-    event = { "BufReadPost", "BufNewFile" },
+    'norcalli/nvim-colorizer.lua',
+    event = { 'BufReadPost', 'BufNewFile' },
     cmd = {
-      "ColorizerAttachToBuffer",
-      "ColorizerDetachFromBuffer",
-      "ColorizerReloadAllBuffers",
-      "ColorizerToggle",
+      'ColorizerAttachToBuffer',
+      'ColorizerDetachFromBuffer',
+      'ColorizerReloadAllBuffers',
+      'ColorizerToggle',
     },
     keys = {
-      { "<leader>bc", "<mcd>ColorizerToggle<cr>", desc = "ColorizerToggle" },
+      { '<leader>bc', '<mcd>ColorizerToggle<cr>', desc = 'ColorizerToggle' },
     },
   },
 }
