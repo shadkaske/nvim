@@ -2,7 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      globalstatus = false,
       component_separators = { left = "", right = "" },
       section_separators = { left = " ", right = " " },
       disabled_filetypes = {
