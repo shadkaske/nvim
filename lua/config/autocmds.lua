@@ -15,3 +15,14 @@ vim.api.nvim_create_autocmd(
 
 -- Automagically Trim Whitespace
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]] })
+
+-- BashLs to ignore .env files
+local lsp_hacks = vim.api.nvim_create_augroup("LspHacks", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
+  group = lsp_hacks,
+  pattern = ".env*",
+  callback = function(e)
+    vim.diagnostic.enable(false, { bufnr = e.buf })
+  end,
+})
