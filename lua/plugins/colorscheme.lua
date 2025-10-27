@@ -13,11 +13,16 @@ return {
   },
   {
     "catppuccin/nvim",
+    lazy = false,
+    opts = {
+      transparent_background = true,
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin-mocha",
+      colorscheme = "tokyonight-night",
     },
   },
 }
